@@ -1,0 +1,16 @@
+<div>
+  <h3>Reactive From</h3>
+  <form [formGroup]="userForm" (ngSubmit)="submit()" >
+    <input type="text"formControlName="user">
+    <h3>Address</h3>
+    <div formArrayName="userData"  >
+      <div *ngFor="let user of userForm.get('userData').controls ;let i =index"[formGroupName]='i' >
+        <input type="text"  formControlName='user'><br>
+        <input type="text"  formControlName='age'><br>
+        <input type="text"  formControlName='value'><br>
+      </div>
+
+    </div>
+    <button type="submit">Submit</button>
+    </form>
+</div>
