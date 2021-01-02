@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { UserFromComponent } from './user-from/user-from.component'
+import { UserFromComponent } from './user-from/user-from.component';
+import { SimplefromComponent } from './simplefrom/simplefrom.component'
 @NgModule({
   declarations: [
     AppComponent,
-    UserFromComponent
+    UserFromComponent,
+    SimplefromComponent
   ],
   imports: [
     BrowserModule,
