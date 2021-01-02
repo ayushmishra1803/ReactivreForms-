@@ -11,8 +11,21 @@
     <input type="text" formControlName="colonyName" />
     <input type="text" formControlName="CityName" />
   </div>
+  <div formArrayName="contactList">
+    <div
+      *ngFor="
+        let contact of userDetails.get('contactList').controls;
+        let i = index
+      "
+      [formGroupName]="i"
+    >
+      <input type="text" formControlName="name" />
 
+      <input type="text" formControlName="mobileNumber" />
+    </div>
+    <button (click)="addToContact()">Add Field</button>
+  </div>
 </form>
 <div>
-    {{userDetails.value |json}}
+  {{ userDetails.value | json }}
 </div>

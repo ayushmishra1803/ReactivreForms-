@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-simplefrom',
@@ -19,8 +20,14 @@ userDetails;
         flatName:new FormControl('f5/22'),
         colonyName:new FormControl('Rishi Nagar'),
         CityName:new FormControl('Ujjain')
-      })
+      }),
+      contactList:new FormArray([])
     })
   }
-
+  addToContact(){
+  (<FormArray> this.userDetails.get('contactList')).push(new FormGroup({
+    name:new FormControl(''),
+    mobileNumber:new FormControl('')
+  }))
+  }
 }
