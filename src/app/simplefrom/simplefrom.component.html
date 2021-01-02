@@ -1,9 +1,18 @@
 <h3>User Infromation in Reactive Forms</h3>
 
-<form>
-  <input type="text" />
+<form [formGroup]="userDetails">
+  <input type="text" formControlName="name" />
 
-  <input type="text" />
-  <input type="text" />
-  <input type="text" />
+  <input type="text" formControlName="username" />
+  <input type="text" formControlName="mobileNumber" />
+  <div formGroupName="address">
+    <input type="text" formControlName="flatName" />
+
+    <input type="text" formControlName="colonyName" />
+    <input type="text" formControlName="CityName" />
+  </div>
+
 </form>
+<div>
+    {{userDetails.value |json}}
+</div>

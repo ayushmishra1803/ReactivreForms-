@@ -12,9 +12,14 @@ userDetails;
 
   ngOnInit(): void {
     this.userDetails=new FormGroup({
-      name:new FormControl(''),
-      username:new FormControl(''),
-      mobileNumber:new FormControl()
+      name:new FormControl('Ayush'),
+      username:new FormControl('Mishra'),
+      mobileNumber:new FormControl('8225022873'),
+      address:new FormGroup({
+        flatName:new FormControl('f5/22'),
+        colonyName:new FormControl('Rishi Nagar'),
+        CityName:new FormControl('Ujjain')
+      })
     })
   }
 
